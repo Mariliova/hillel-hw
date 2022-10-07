@@ -14,5 +14,3 @@ if (userAnswer == 'add') {
 } else {
     alert("You entered wrong command. Please renovate the page and try again. ")
 }
-
-
