@@ -52,7 +52,7 @@ console.log(avarage);
 
 let sum30_80 = 0;
 for (let i = 30; i <= 80; i += 1) {
-    if (i % 2 !== 0 ) {
+    if (i % 2 == 0 ) {
         sum30_80 += i;
     }
 }
