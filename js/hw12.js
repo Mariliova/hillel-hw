@@ -57,14 +57,6 @@ let users = [
 }
 ]
 
-// const user = users[0];
-// console.log(user);
-// const userBalanceStr = user.balance;
-// console.log(userBalanceStr);
-// const userBalanceStrSlice = userBalanceStr.slice(1,(userBalanceStr.length - 7));
-// console.log(userBalanceStrSlice);
-
-
 const requiredAmount = 2;
 const tels = [];
 let sumBalance = 0;
@@ -86,5 +78,3 @@ for (let i = 0; i < users.length; i += 1) {
 
 console.log(tels);
 console.log(sumBalance);
-
-
