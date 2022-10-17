@@ -12,18 +12,16 @@ console.log(sum1);
 // Знайти мінімальний елемент масиву та його порядковий номер.
 
 const arr2 = [16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 27, -63, 4, -54, 76, -4, 12, -35, 4, 47];
-const minElement = [arr2[0]];
+const minElement = arr2[0];
 for (let i = 0; i = arr2.length; i += 1) {
-    const anElement = arr2.shift();
-    if (anElement < minElement) {
-        minElement.shift();
-        minElement.push(anElement);
+    if (arr[i] < minElement) {
+        minElement = arr[i]
     }
 }
 console.log(minElement);
 
 const arr2_1 = [16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 27, -63, 4, -54, 76, -4, 12, -35, 4, 47];
-console.log(arr2_1.indexOf(Number(minElement.join())));
+console.log(arr2_1.indexOf(minElement));
 
 // Знайти максимальний елемент масиву та його порядковий номер.
 
