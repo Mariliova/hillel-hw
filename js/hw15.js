@@ -123,3 +123,4 @@ function removeElements(str, [a, b]) {
 
 const refactored = removeElements("hello world", ["l", "d"]);
 console.log(refactored); //"heo wor"
+
