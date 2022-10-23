@@ -24,11 +24,7 @@ console.log(aver);
 // -Написати функцію doMath(x, znak, y), яка отримує 3 аргументи: числа x і y, рядок znak. У змінній znak може бути: +, -, *, /, %, ^ (ступінь ).Вивести результат математичної дії, вказаної в змінній znak.Обидва числа і знак виходять від користувача.
 
 function doMath(x, znak, y) {
-  x = Number(prompt("Enter the first number:", "5"));
-  y = Number(prompt("Enter the second number:", "2"));
-  znak = prompt("Choose an oparation: +, -, *, /, %, ^", "+");
   let result;
-
   if (
     x !== Math.LN2 &&
     x !== Infinity &&
@@ -64,7 +60,7 @@ function doMath(x, znak, y) {
   return result;
 }
 
-const math = doMath();
+const math = doMath(5, '+', 2);
 console.log(math);
 
 // -Написати функцію заповнення даними користувача двомірного масиву.Довжину основного масиву і внутрішніх масивів задає користувач.Значення всіх елементів всіх масивів задає користувач.
