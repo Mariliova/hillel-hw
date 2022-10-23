@@ -2,17 +2,13 @@
 // Ступінь передається як другий аргумент у функцію
 
 function pow(num, degree) {
-  let result = num;
-  for (let i = 1; i < degree; i += 1) {
-    result *= num;
+  if (num === 0) return 0;
+  if (degree === 0) return 1;
+  if (degree === 1) return num;
+  if (degree > 1 && num > 0) {
+    return num * pow(num, degree - 1);
   }
-  return result;
 }
 
 const number = pow(2, 4);
 console.log(number);
-
-// function pow2(number) {
-//   return number ** 2;
-// }
-
