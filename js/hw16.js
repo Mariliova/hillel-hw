@@ -12,3 +12,7 @@ function pow(num, degree) {
 const number = pow(2, 4);
 console.log(number);
 
+// function pow2(number) {
+//   return number ** 2;
+// }
+
