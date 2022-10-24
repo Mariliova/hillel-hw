@@ -101,18 +101,16 @@ console.log(arr);
 
 // -Створити функцію, яка прибирає з рядка всі символи, які ми передали другим аргументом. 'func(" hello world", ['l', 'd'])' поверне нам "heo wor". Вихідний рядок та символи для видалення задає користувач
 
-function removeElements(str, [a, b]) {
+function removeElements(str, elements) {
   const arr = str.split("");
   const uniqArray = arr.reduce((uniq, item) => {
     return uniq.includes(item) ? uniq : [...uniq, item];
   }, []);
 
-  const arrChars = [a, b];
-  const index_a = uniqArray.indexOf(arrChars[0]);
-  uniqArray.splice(index_a, 1);
-  const index_b = uniqArray.indexOf(arrChars[1]);
-  uniqArray.splice(index_b, 1);
-
+  for (let i = 0; i < elements.length; i += 1) {
+    uniqArray.splice(uniqArray.indexOf(elements[i]), 1);
+  }
+  
   const newStr = uniqArray.join("");
   return newStr;
 }
