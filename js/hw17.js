@@ -1,11 +1,15 @@
 // Написати функцію, яка приймає 1 параметр.з тим, що передали перший раз і т.д.
 //  Все це із замиканнями, наприклад: sum(3) = 3, sum(5) = 8, sum(20) = 28
 
-function createIncrementor(a) {
-    return function (num) {
-        return a + num;
-    }
+function createIncrementor() {
+  let sum = 0;
+  return function (num) {
+    return (sum += num);
+    return sum;
+  };
 }
 
-const add1 = createIncrementor(1);
-console.log(add1(3));
+const added = createIncrementor();
+console.log(added(3)); // 3
+console.log(added(5)); // 8
+console.log(added(20)); // 28
