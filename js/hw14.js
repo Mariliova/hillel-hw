@@ -6,7 +6,7 @@ function generateKey(length, characters) {
     let result = "";
     for (let i = 0; i <= length; i += 1) {
         const randomNumber = Math.floor(Math.random() * characters.length);
-        result += characters[randomNumber];
+        result += characters.substring(randomNumber, randomNumber +1);
     }
     return result;
 }
