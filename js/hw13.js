@@ -1,8 +1,13 @@
-const array = [1, 2, 3, 4, 5, 6, 7];
+const array = [1, 2, 5, 3, 4, 5, 6, 7, 5];
 
-function removeElement(array , item) {
-    return array.splice(item - 1, 1);
+function removeElement(array, item) {
+  let newArr = array.filter(function (element) {
+    if (element !== item) {
+      return element;
+    }
+  });
+  return newArr;
 }
 
-removeElement(array, 5 );
-console.log(array);
+const filteredArr = removeElement(array, 5);
+console.log(filteredArr);
