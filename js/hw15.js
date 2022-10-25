@@ -102,17 +102,16 @@
 // -Створити функцію, яка прибирає з рядка всі символи, які ми передали другим аргументом. 'func(" hello world", ['l', 'd'])' поверне нам "heo wor". Вихідний рядок та символи для видалення задає користувач
 
 function removeElements(str, elements) {
-  const array = str.split("");
+  // const array = str.split("");
+  
+  // let newArr = array.filter(function (element) {
+  //   if (element !== elements[0]) {
+  //     return element;
+  //   }
+  // });
 
-
-  let newArr = array.filter(function (element) {
-    if (element !== elements[0]) {
-      return element;
-    }
-  });
-
-  const newStr = newArr.join("");
-  return newStr;
+  // const newStr = newArr.join("");
+  // return newStr;
 }
 
 const refactored = removeElements("hello world", ["l", "d"]);
