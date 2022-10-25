@@ -4,7 +4,7 @@
 function createIncrementor() {
   let sum = 0;
   return function (num) {
-    return (sum += num);
+    sum += num;
     return sum;
   };
 }
