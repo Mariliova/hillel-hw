@@ -7,7 +7,7 @@ class Human {
 
 class Flat {
   residentsArray = [];
-  addResidents(resident) {
+  addResident(resident) {
     this.residentsArray.push(resident);
   }
 }
