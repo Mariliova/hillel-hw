@@ -48,3 +48,6 @@ const roma = new Human("Roma", "17");
 
 const auto1 = new Auto("BMW", "X6 (G06)", "2019", "BI 1248 BA");
 const auto2 = new Auto("BMW", "X6 (G06)", "2020", "BI 1250 BA");
+
+auto1.owner(lana);
+auto2.owner(roma);
