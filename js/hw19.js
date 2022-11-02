@@ -18,7 +18,7 @@ class Building {
   constructor(number) {
     this.maxFlatsNumber = number;
   }
-  addFlats(flat) {
+  addFlat(flat) {
     if (this.flatsArray.length < this.maxFlatsNumber) {
       this.flatsArray.push(flat);
     } else {
@@ -40,15 +40,15 @@ const flat1 = new Flat();
 const flat2 = new Flat();
 const flat3 = new Flat();
 
-flat1.addResidents(lena);
-flat1.addResidents(vania);
-flat2.addResidents(olia);
-flat2.addResidents(vasia);
-flat3.addResidents(katia);
-flat3.addResidents(liosha);
+flat1.addResident(lena);
+flat1.addResident(vania);
+flat2.addResident(olia);
+flat2.addResident(vasia);
+flat3.addResident(katia);
+flat3.addResident(liosha);
 
 const building1 = new Building(2);
 
-building1.addFlats(flat1);
-building1.addFlats(flat2);
-building1.addFlats(flat3);
+building1.addFlat(flat1);
+building1.addFlat(flat2);
+building1.addFlat(flat3);
