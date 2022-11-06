@@ -1,0 +1,20 @@
+.wrapper {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+}
+
+.input {
+  width: 300px;
+}
+
+.ghost {
+  width: 100px;
+  height: 30px;
+  margin-left: 20px;
+  background-color: grey;
+}
