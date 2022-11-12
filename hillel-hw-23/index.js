@@ -8,4 +8,4 @@ const arr = [
 const img = document.querySelector("img");
 
 const randomImgSrc = arr[Math.floor(Math.random() * arr.length)];
-img.setAttribute("src", randomKey);
+img.setAttribute("src", randomImgSrc);
