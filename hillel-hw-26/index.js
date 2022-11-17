@@ -127,3 +127,18 @@ const products = [
       "Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est.",
   },
 ];
+
+const input = document.getElementById("input");
+const button = document.getElementById("buy-button");
+
+button.addEventListener("click", () => {
+  const link = input.value;
+  const HTTP = "http://";
+  const HTTPS = "https://";
+
+  if (link.startWith(HTTP) || link.startWith(HTTPS)) {
+    document.location.assign(link);
+  } else {
+    document.location.assign(`${HTTPS}${link}`);
+  }
+});
