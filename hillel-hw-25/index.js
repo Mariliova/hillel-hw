@@ -11,13 +11,14 @@ const reactionElements = reactions.map((reaction) => {
   counter.innerText = 0;
   wrapper.append(button, counter);
 
-  button.addEventListener("click", function (event) {
-    if (event.target === button) {
-      counter.innerText = parseInt(counter.innerText) + 1;
-    }
-  });
-
   return wrapper;
 });
 
 reactionElements.forEach((elem) => container.appendChild(elem));
+
+container.addEventListener("click", (event) => {
+  if (event.target.nodeName === "BUTTON") {
+    const counter = event.target.parentElement.querySelector(".counter");
+    counter.innerText = parseInt(counter.innerText) + 1;
+  }
+});
