@@ -159,5 +159,5 @@ button.addEventListener("click", () => {
   if (message.innerText === "The product has been added to the basket") {
     alert("The product was bought! Thank you!");
   }
-  window.location.reload(true);
+  window.location.reload();
 });
