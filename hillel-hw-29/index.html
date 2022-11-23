@@ -4,10 +4,38 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HW29</title>
-    <link rel="stylesheet" href="./index.html" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
   </head>
+
   <body>
-    <script src="./index.js" type="module"></script>
+    <div class="wrapper">
+      <div class="container">
+        <div class="frame">
+          <ul id="categories">
+            <li data-category-id="1">Toys</li>
+            <li data-category-id="2">Sports</li>
+            <li data-category-id="3">Grocery</li>
+            <li data-category-id="4">Garden</li>
+          </ul>
+        </div>
+
+        <div class="frame"><ul id="products"></ul></div>
+
+        <div class="selected-products">
+          <div id="description"></div>
+          <button id="buy-button">Buy</button>
+          <div id="message"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./index.js"></script>
   </body>
 </html>
