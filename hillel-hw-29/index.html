@@ -30,9 +30,59 @@
 
         <div class="selected-products">
           <div id="description"></div>
-          <button id="buy-button">Buy</button>
+          <button id="buy-button" type="button" data-modal-open>Buy</button>
           <div id="message"></div>
         </div>
+      </div>
+    </div>
+
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal" id="modal">
+        <button class="modal__btn" type="button" data-modal-close>Close</button>
+        <form class="form" name="buyForm" method="get">
+          <b>Form</b>
+          <ul>
+            <li>
+              <label for="name">Name</label>
+              <input type="text" name="name" id="name" />
+            </li>
+            <li>
+              <label for="tel">Phone number</label>
+              <input type="tel" name="tel" id="tel" />
+            </li>
+            <li>
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email" />
+            </li>
+            <li>
+              <label for="city">City</label>
+              <select id="city">
+                <option value="poltava" selected>Poltava</option>
+                <option value="kiyv">Kiyv</option>
+                <option value="kharkiv">Kharkiv</option>
+              </select>
+            </li>
+            <li>
+              <label for="post">Nova Poshta</label>
+              <input type="number" name="post" id="post" />
+            </li>
+            <li>
+              <b>Payment</b>
+              <br />
+              <input type="radio" name="payment" id="after" checked />
+              <label for="after">After delivery</label>
+              <br />
+              <input type="radio" name="payment" id="card" />
+              <label for="card">Pay but card</label>
+            </li>
+            <li>
+              <label for="numberOfItems">Number of items</label>
+              <input type="text" name="numberOfItems" id="numberOfItems" />
+            </li>
+          </ul>
+
+          <button class="form__btn" type="submit">Submit</button>
+        </form>
       </div>
     </div>
 

@@ -129,6 +129,9 @@ const productsUl = document.querySelector("#products");
 const message = document.querySelector("#message");
 const description = document.querySelector("#description");
 const button = document.querySelector("#buy-button");
+const form = document.forms.buyForm;
+const elements = form.elements;
+const modal = document.querySelector("#modal");
 
 categoriesUl.addEventListener("click", (event) => {
   if (event.target.nodeName === "LI") {
@@ -155,9 +158,39 @@ productsUl.addEventListener("click", (event) => {
   }
 });
 
-button.addEventListener("click", () => {
-  if (message.innerText === "The product has been added to the basket") {
-    alert("The product was bought! Thank you!");
+// HW29
+
+(() => {
+  const formModal = {
+    openModalBtn: document.querySelector("[data-modal-open]"),
+    closeModalBtn: document.querySelector("[data-modal-close]"),
+    modal: document.querySelector("[data-modal]"),
+  };
+
+  formModal.openModalBtn.addEventListener("click", toggleModal);
+  formModal.closeModalBtn.addEventListener("click", toggleModal);
+
+  function toggleModal() {
+    document.body.classList.toggle("modal-open");
+    formModal.modal.classList.toggle("is-hidden");
   }
-  window.location.reload();
+})();
+
+// Validation
+form.addEventListener("submit", (ev) => {
+  ev.preventDefault();
+  if (
+    elements.name.value === "" &&
+    elements.tel.value === "" &&
+    elements.email.value === "" &&
+    elements.post.value === "" &&
+    elements.numberOfItems.value === ""
+  ) {
+    modal.insertAdjacentHTML(
+      "beforeend",
+      `<p class="alert">"Fill out the form, please!"</p>`
+    );
+    return;
+  }
+  form.submt();
 });
