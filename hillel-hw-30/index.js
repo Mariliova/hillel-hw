@@ -24,4 +24,5 @@ form.addEventListener("submit", (ev) => {
       cell.innerText = arg.nextElementSibling.innerText;
     }
   }
+  form.style.visibility = "hidden";
 });
