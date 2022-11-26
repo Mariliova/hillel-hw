@@ -11,13 +11,13 @@ form.addEventListener("submit", (ev) => {
     elements;
   console.log(elements);
   const infoArgs = [name, surname, birthday, city, address];
-  const checkboxesArgs = [male, female, eng, uk];
+  const radCheckArgs = [male, female, eng, uk];
   for (const arg of infoArgs) {
     const row = table.insertRow();
     const cell = row.insertCell();
     cell.innerText = arg.value;
   }
-  for (const arg of checkboxesArgs) {
+  for (const arg of radCheckArgs) {
     if (arg.checked === true) {
       const row = table.insertRow();
       const cell = row.insertCell();
