@@ -24,6 +24,7 @@ const products = [
     name: "Eggplant - Asian",
     description:
       "Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",
+    price: 300,
   },
   {
     id: 2,
@@ -31,6 +32,7 @@ const products = [
     name: "Jagermeister",
     description:
       "Nullam molestie nibh in lectus. Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.",
+    price: 300,
   },
   {
     id: 3,
@@ -38,6 +40,7 @@ const products = [
     name: "Wine - Lou Black Shiraz",
     description:
       "Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat.",
+    price: 300,
   },
   {
     id: 4,
@@ -45,6 +48,7 @@ const products = [
     name: "Toy car - Hot Wheels",
     description:
       "Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
+    price: 300,
   },
   {
     id: 5,
@@ -59,6 +63,7 @@ const products = [
     name: "Tracksuit - Adidas",
     description:
       "Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus.",
+    price: 300,
   },
   {
     id: 7,
@@ -66,12 +71,14 @@ const products = [
     name: "Appetizer - Shrimp Puff",
     description:
       "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.",
+    price: 300,
   },
   {
     id: 8,
     category_id: 1,
     name: "Ecolab - Ster Bac",
     description: "Integer ac leo. Pellentesque ultrices mattis odio.",
+    price: 300,
   },
   {
     id: 9,
@@ -79,6 +86,7 @@ const products = [
     name: "Vegetable - Base",
     description:
       "Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam.",
+    price: 300,
   },
   {
     id: 10,
@@ -86,6 +94,7 @@ const products = [
     name: "Flour - Corn, Fine",
     description:
       "Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat.",
+    price: 300,
   },
   {
     id: 11,
@@ -93,6 +102,7 @@ const products = [
     name: "Beer - Guiness",
     description:
       "In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+    price: 300,
   },
   {
     id: 12,
@@ -100,6 +110,7 @@ const products = [
     name: "Napkin White",
     description:
       "Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.",
+    price: 300,
   },
   {
     id: 13,
@@ -107,6 +118,7 @@ const products = [
     name: "snikers - Nike",
     description:
       "Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
+    price: 300,
   },
   {
     id: 14,
@@ -114,6 +126,7 @@ const products = [
     name: "Wine - Puligny Montrachet A.",
     description:
       "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat.",
+    price: 300,
   },
   {
     id: 15,
@@ -121,14 +134,16 @@ const products = [
     name: "Tomatoes Tear Drop",
     description:
       "Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est.",
+    price: 300,
   },
 ];
 
 const categoriesUl = document.querySelector("#categories");
 const productsUl = document.querySelector("#products");
 const message = document.querySelector("#message");
-const description = document.querySelector("#description");
+const dscpt = document.querySelector("#dscpt");
 const button = document.querySelector("#buy-button");
+let order = {};
 
 categoriesUl.addEventListener("click", (event) => {
   if (event.target.nodeName === "LI") {
@@ -146,18 +161,19 @@ categoriesUl.addEventListener("click", (event) => {
 
 productsUl.addEventListener("click", (event) => {
   if (event.target.nodeName === "LI") {
-    description.innerText = "";
+    dscpt.innerText = "";
     message.innerText = "";
     for (const product of products) {
-      description.innerText = product.description;
-      message.innerText = "The product has been added to the basket";
+      if (product.id === Number(event.target.dataset.productId)) {
+        dscpt.innerText = product.description;
+        message.innerText = "The product has been added to the basket";
+        order = {
+          ...product,
+          date: new Date(),
+          totat: product.price,
+        };
+        console.log(order);
+      }
     }
   }
-});
-
-button.addEventListener("click", () => {
-  if (message.innerText === "The product has been added to the basket") {
-    alert("The product was bought! Thank you!");
-  }
-  window.location.reload();
 });
