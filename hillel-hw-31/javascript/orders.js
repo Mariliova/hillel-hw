@@ -46,6 +46,7 @@ ordersUl.addEventListener("click", (event) => {
         );
         dscpt.innerText = description;
         message.innerText = "The product has been added to the basket";
+        buyButton.disabled = false;
         order = {
           ...element,
           date: new Date(),
@@ -62,6 +63,7 @@ ordersUl.addEventListener("click", (event) => {
         dscpt.innerText = "";
         message.innerText = "";
         orderDetailsUl.innerText = "";
+        buyButton.disabled = true;
       }
       if (id === Number(event.target.dataset.btnId)) {
         localStorage.removeItem(id);

@@ -56,6 +56,7 @@ const products = [
     name: "Beef - Bones, Marrow",
     description:
       "Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.",
+    price: 300,
   },
   {
     id: 6,
@@ -142,8 +143,25 @@ const categoriesUl = document.querySelector("#categories");
 const productsUl = document.querySelector("#products");
 const message = document.querySelector("#message");
 const dscpt = document.querySelector("#dscpt");
-const button = document.querySelector("#buy-button");
+const buyButton = document.querySelector("#buy-button");
+const categoriesButton = document.querySelector("#categories-btn");
 let order = {};
+
+buyButton.disabled = true;
+
+categoriesButton.addEventListener("click", () => {
+  categoriesUl.innerText = "";
+  ordersUl.innerText = "";
+  orderDetailsUl.innerText = "";
+  dscpt.innerText = "";
+  message.innerText = "";
+  for (const category of categories) {
+    categoriesUl.insertAdjacentHTML(
+      "beforeend",
+      `<li data-category-id=${category.id}>${category.category}</li>`
+    );
+  }
+});
 
 categoriesUl.addEventListener("click", (event) => {
   if (event.target.nodeName === "LI") {
@@ -167,6 +185,7 @@ productsUl.addEventListener("click", (event) => {
       if (product.id === Number(event.target.dataset.productId)) {
         dscpt.innerText = product.description;
         message.innerText = "The product has been added to the basket";
+        buyButton.disabled = false;
         order = {
           ...product,
           date: new Date(),
