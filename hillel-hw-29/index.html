@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <div class="frame">
+          <ul id="categories">
+            <li data-category-id="1">Toys</li>
+            <li data-category-id="2">Sports</li>
+            <li data-category-id="3">Grocery</li>
+            <li data-category-id="4">Garden</li>
+          </ul>
+        </div>
+
+        <div class="frame"><ul id="products"></ul></div>
+
+        <div class="selected-products">
+          <div id="dscpt"></div>
+          <button id="buy-button" data-modal-open>Buy</button>
+          <div id="message"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button class="modal__btn" type="button" data-modal-close>Close</button>
+        <form class="form" name="buy">
+          <b>Form</b>
+          <ul>
+            <li>
+              <label for="name">Name</label>
+              <input type="text" name="name" id="name" />
+            </li>
+            <li>
+              <label for="city">City</label>
+              <select id="city">
+                <option value="poltava" selected>Poltava</option>
+                <option value="kiyv">Kiyv</option>
+                <option value="kharkiv">Kharkiv</option>
+              </select>
+            </li>
+            <li>
+              <label for="post">Nova Poshta</label>
+              <input type="number" name="post" id="post" value="1" />
+            </li>
+            <li>
+              <b>Payment</b>
+              <br />
+              <input type="radio" name="payment" id="after" checked />
+              <label for="after">After delivery</label>
+              <br />
+              <input type="radio" name="payment" id="card" />
+              <label for="card">Pay but card</label>
+            </li>
+            <li>
+              <label for="numberOfItems">Number of items</label>
+              <input
+                type="text"
+                name="numberOfItems"
+                id="numberOfItems"
+                value="1"
+              />
+            </li>
+          </ul>
+
+          <div class="error"></div>
+
+          <button class="form__btn" type="submit">Submit</button>
+        </form>
+        <pre class="order-info"></pre>
+      </div>
+    </div>
+
+    <script src="./javascript/index1.js"></script>
+    <script src="./javascript/form1.js"></script>
+  </body>
+</html>
