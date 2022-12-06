@@ -39,11 +39,6 @@ function onGetPostBtnClick() {
   }
 }
 
-function createPost({ title, body }) {
-  refs.postTitle.innerText = title;
-  refs.postBody.innerText = body;
-}
-
 function onGetCommentsBtnClick() {
   const postId = refs.inputWithId.value;
   getCommentsByPostIt(postId)
@@ -60,6 +55,25 @@ function onGetCommentsBtnClick() {
     });
 }
 
+function iputValidation(postId) {
+  if (postId < 1 || postId > 100) {
+    refs.massege.innerText = "You can type a number in the range from 1 to 100";
+    refs.postTitle.innerText = "";
+    refs.postBody.innerText = "";
+    refs.commentsList.innerText = "";
+    refs.getCommentsBtn.disabled = true;
+    return false;
+  }
+
+  refs.massege.innerText = "";
+  return true;
+}
+
+function createPost({ title, body }) {
+  refs.postTitle.innerText = title;
+  refs.postBody.innerText = body;
+}
+
 function createCommentsList({ name, email, body }) {
   refs.commentsList.innerText = "";
   refs.commentsList.insertAdjacentHTML(
@@ -70,17 +84,4 @@ function createCommentsList({ name, email, body }) {
     <p>Comment: ${body}</p>
     </li>`
   );
-}
-
-function iputValidation(postId) {
-  if (postId < 1 || postId > 100) {
-    refs.massege.innerText = "You can type a number in the range from 1 to 100";
-    refs.postTitle.innerText = "";
-    refs.postBody.innerText = "";
-    refs.getCommentsBtn.disabled = true;
-    return false;
-  }
-
-  refs.massege.innerText = "";
-  return true;
 }
