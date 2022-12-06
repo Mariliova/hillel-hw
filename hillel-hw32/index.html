@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HW32</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="search">
+      <h1>Get a post</h1>
+      <input class="input-with-id" type="number" min="1" max="100" value="1" />
+      <button class="get-post-btn" type="button">Get a post</button>
+      <button class="get-comments-btn" type="button" disabled>
+        Get comments for the post
+      </button>
+      <p class="massege"></p>
+    </div>
+
+    <div>
+      <h2 class="post__title"></h2>
+      <p class="post__body"></p>
+      <ul class="post__comments-list"></ul>
+    </div>
+
+    <script src="./index.js" type="module"></script>
+  </body>
+</html>
