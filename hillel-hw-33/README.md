@@ -6,11 +6,11 @@
 
 - Вивести список на основі готової верстки на головну сторінку
 
-* По кліку на карточку товару на головній має відбуватися перехід на сторінку товару
+- По кліку на карточку товару на головній має відбуватися перехід на сторінку товару
 
 https://developer.mozilla.org/ru/docs/Web/API/History/pushState
 
-На сторінці товару потрібно відображати актуальну інформацію - назву товару
+- На сторінці товару потрібно відображати актуальну інформацію - назву товару
 
 https://developer.mozilla.org/ru/docs/Web/API/History/state
 
@@ -20,7 +20,7 @@ https://developer.mozilla.org/ru/docs/Web/API/History/state
 
 - Елементи для списку створювати через document.createElement і addEventListener
 
-* Підміняти інформацію про товар на актуальну на сторінці товару через: innerText/innerHTML/insertAdjacent
+- Підміняти інформацію про товар на актуальну на сторінці товару через: innerText/innerHTML/insertAdjacent
 
   3)Робота з ООП
 
