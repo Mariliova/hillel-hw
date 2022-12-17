@@ -10,10 +10,14 @@ const params = {
 };
 
 async function fetchWeatherInfo() {
-  const response = await fetch(
-    `${params.URL}?q=${params.CITY}&units=${params.UNITS}&APPID=${params.APPID}`
-  );
-  return await response.json();
+  try {
+    const response = await fetch(
+      `${params.URL}?q=${params.CITY}&units=${params.UNITS}&APPID=${params.APPID}`
+    );
+    return await response.json();
+  } catch {
+    refs.weather.innerHTML = `Sorry, something went wrong!`;
+  }
 }
 
 fetchWeatherInfo().then((weatherData) => {
