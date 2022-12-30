@@ -8,7 +8,7 @@ function Voting() {
     <div className="wrapper">
       <div className="container">
         {reactions.map((reaction, index) => (
-          <Item reaction={reaction} key={index} />
+          <Item reaction={reaction} key={reaction} />
         ))}
       </div>
     </div>

@@ -12,7 +12,7 @@ class Item extends React.Component {
 
   increment() {
     this.setState((prevState) => ({
-      counter: Number(prevState.counter) + 1,
+      counter: prevState.counter + 1,
     }));
   }
 
